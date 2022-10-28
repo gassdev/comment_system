@@ -84,11 +84,8 @@
       <h2>Les commentaires</h2>
 
       <template id="alert">
-        <div
-          class="alert alert-danger alert-dismissible fade show"
-          role="alert"
-        >
-          <div class="js-text">Erreur lors de l'envoi du formulaire</div>
+        <div class="alert alert-dismissible fade show" role="alert">
+          <div class="js-text"></div>
           <button
             class="btn-close"
             data-bs-dismiss="alert"
@@ -96,13 +93,20 @@
           ></button>
         </div>
       </template>
-      <form action="" class="js-comment-form">
+      <form
+        action=""
+        class="js-form-fetch"
+        data-endpoint="https://jsonplaceholder.typicode.com/comments"
+        data-template="#comment"
+        data-target=".comments"
+        data-elements='{"name":".js-username", "body":".js-content"}'
+      >
         <div class="row mb-2">
           <div class="col-sm">
             <input
               type="text"
               class="form-control"
-              name="pseudo"
+              name="name"
               placeholder="Votre pseudo"
             />
           </div>
@@ -126,12 +130,9 @@
       <template id="comment">
         <article class="mb-4">
           <div class="mb-1">
-            <strong class="js-username">John DOE</strong>
+            <strong class="js-username"></strong>
           </div>
-          <p class="js-content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, neque?
-          </p>
+          <p class="js-content"></p>
         </article>
       </template>
 
