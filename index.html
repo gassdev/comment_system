@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TP COMMENTS</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <style>
+      li {
+        list-style: none;
+      }
+    </style>
+    <script src="app.js" type="module" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <article>
+        <h1>Titre de notre article</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vero
+          quae assumenda?
+        </p>
+        <ul>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+            deleniti vitae ex?
+          </li>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+            deleniti vitae ex?
+          </li>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+            deleniti vitae ex?
+          </li>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+            deleniti vitae ex?
+          </li>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+            deleniti vitae ex?
+          </li>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+            deleniti vitae ex?
+          </li>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+            deleniti vitae ex?
+          </li>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+            deleniti vitae ex?
+          </li>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+            deleniti vitae ex?
+          </li>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+            deleniti vitae ex?
+          </li>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+            deleniti vitae ex?
+          </li>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+            deleniti vitae ex?
+          </li>
+        </ul>
+      </article>
+      <h2>Les commentaires</h2>
+
+      <template id="alert">
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          role="alert"
+        >
+          <div class="js-text">Erreur lors de l'envoi du formulaire</div>
+          <button
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="close"
+          ></button>
+        </div>
+      </template>
+      <form action="" class="js-comment-form">
+        <div class="row mb-2">
+          <div class="col-sm">
+            <input
+              type="text"
+              class="form-control"
+              name="pseudo"
+              placeholder="Votre pseudo"
+            />
+          </div>
+          <div class="col-sm">
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              placeholder="Votre email"
+            />
+          </div>
+        </div>
+        <textarea name="body" class="form-control mb-2"></textarea>
+        <button class="btn btn-primary">Envoyer</button>
+      </form>
+
+      <hr />
+
+      <div class="comments"></div>
+
+      <template id="comment">
+        <article class="mb-4">
+          <div class="mb-1">
+            <strong class="js-username">John DOE</strong>
+          </div>
+          <p class="js-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Perferendis, neque?
+          </p>
+        </article>
+      </template>
+
+      <div
+        data-endpoint="https://jsonplaceholder.typicode.com/comments?_limit=10"
+        data-template="#comment"
+        data-target=".comments"
+        data-elements='{"name":".js-username", "body":".js-content"}'
+        class="text-center js-infinite-pagination"
+      >
+        <div class="spinner-border" role="status"></div>
+      </div>
+    </div>
+  </body>
+</html>
